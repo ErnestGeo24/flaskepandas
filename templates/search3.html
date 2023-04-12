@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <form action="/search" method = "GET">
+            {% for lingua in lingue %}
+                <input type="radio" name = "film" value="{{lingua}}">{{lingua}}</input> <br>
+            {% endfor %}
+            <p><input type = "submit" value = "Clicca per conoscere i dati" /></p>
+        </form>
+    </body>
+</html>
