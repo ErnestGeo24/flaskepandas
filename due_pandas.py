@@ -3,14 +3,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('search.html')
+    return render_template('search1.html')
 
 @app.route('/search', methods = ['GET'])
 def search():
     import pandas as pd
-    film = request.args['film']
     dati_film = pd.read_csv('https://raw.githubusercontent.com/wtitze/3E/main/2010.csv', sep=";")
-    risultato = dati_film[dati_film['Language']==film.capitalize()]
+    risultato = dati_film[dati_film['Language']=="English"]
     if len(risultato) == 0:
         table = 'Film non trovato'
     else:
