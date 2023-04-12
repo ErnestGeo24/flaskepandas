@@ -7,7 +7,7 @@ dati_film = pd.read_csv('https://raw.githubusercontent.com/wtitze/3E/main/2010.c
 @app.route('/')
 def home():
     lingua_film = dati_film.drop_duplicates(subset=['Language'])
-    return render_template('search3.html', lingue= list(lingua_film['Language'].sort_values("Language")))
+    return render_template('search3.html', lingue= list(lingua_film['Language']))
 
 @app.route('/search', methods = ['GET'])
 def search():
